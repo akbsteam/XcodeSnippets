@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(NSNumber *)getFileSize:(NSString *)fileName{
+    NSError *error = nil;
+    NSDictionary *attributes = [[NSFileManager defaultManager]
+                                attributesOfItemAtPath:fileName error:&amp;error];
+    
+    if (!error) {
+        NSNumber *size = [attributes objectForKey:NSFileSize];
+        return size;
+    } else {
+        return [NSNumber numberWithFloat:-1];
+    }
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F4E92021-D8BC-4D2E-BC4A-447A63B6B663</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Get File Size</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

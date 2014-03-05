@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// Create a pinch gesture recognizer instance.
+self.pinchGestureRecognizer = [[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGesture:)] autorelease];
+
+// And add it to your text view.
+[self.myTextView addGestureRecognizer:self.pinchGestureRecognizer];
+
+// ...
+
+- (void)pinchGesture:(UIPinchGestureRecognizer *)gestureRecognizer
+{
+	NSLog(@"*** Pinch: Scale: %f Velocity: %f", gestureRecognizer.scale, gestureRecognizer.velocity);
+    
+	UIFont *font = self.myTextView.font;
+	CGFloat pointSize = font.pointSize;
+	NSString *fontName = font.fontName;
+    
+	pointSize = ((gestureRecognizer.velocity &gt; 0) ? 1 : -1) * 1 + pointSize;
+	
+	if (pointSize &lt; 13) pointSize = 13;
+	if (pointSize &gt; 42) pointSize = 42;
+	
+	self.myTextView.font = [UIFont fontWithName:fontName size:pointSize];
+	
+	// Save the new font size in the user defaults.
+    // (UserDefaults is my own wrapper around NSUserDefaults.)
+	[[UserDefaults sharedUserDefaults] setFontSize:pointSize];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2410359E-88A2-4D03-90E9-232BB84132F7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Pinch to Zoom Text</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

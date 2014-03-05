@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSArray *arrWithDuplicates = [[NSArray alloc] initWithObjects: @"Bob", @"Bob",@"Olga", @"Olga", @"Robin", nil];
+    
+    NSArray *cleanedArray = [[NSSet setWithArray:arrWithDuplicates] allObjects];
+    
+    NSLog(@"%@", [cleanedArray description] );</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B5CF94DA-A2E2-469C-AEC5-E23D2634E22B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Remove Duplicates from Array</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
